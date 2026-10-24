@@ -4,7 +4,7 @@ from openai import OpenAI
 
 
 
-def main():
+def main() -> None:
     load_dotenv()
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if api_key is None:
@@ -24,5 +24,9 @@ def main():
             }
         ],
     )
+    print("Response")
     print(response.choices[0].message.content)
-main()
+
+
+if __name__ == "__main__":
+    main()
